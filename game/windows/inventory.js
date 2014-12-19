@@ -20,7 +20,8 @@ game.Inventory = {
             if (item) {
                 $("#"+index)
                     .text(item.logo)
-                    .data("item", item);
+                    .data("item", item)
+                    .addClass(item.rarity.toLowerCase());
 
             }
         });
@@ -29,12 +30,17 @@ game.Inventory = {
             .text(function(index, currentContent) {
                 if (items[index]) {
                     $(this).data("item", items[index]);
+                    $(this).addClass(items[index].rarity.toLowerCase());
                     return  items[index].logo;
                 } else return "-";
             });
     },
 
     add: function(item) {
+        game.Backpack.push(item);
+    },
+
+    equip: function(item) {
 
     }
 };

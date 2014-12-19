@@ -32,6 +32,7 @@ var game = {
 
     // THIS IS HERE TO DISPLAY THE INVENTORY BEFORE ACTUALLY LOADING INTO THE GAME
     game.Inventory.updateInventory();
+    $('#main-center-wrap').on('contextmenu', function(e){ return false; });
 },
 
 // Run on game resources loaded

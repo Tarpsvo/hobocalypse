@@ -33,21 +33,33 @@ game.Windows = {
 
     createTooltip: function(item) {
         var tooltip;
+        var modifier = (!item.modifier) ? "<span>"+item.modifier+"</span>" : " ";
+
+
+
         switch (item.type) {
             case "weapon":
                 tooltip = "<div class='itemTooltip'>"+
-                            "<h1 class='item-title'>"+item.name+"</h1>"+
+                            "<h1 class='item-title "+item.rarity.toLowerCase()+"'>"+item.name+"</h1>"+
                             "<ul class='info-list'>"+
-                                "<li><span>Rarity: </span>"+item.rarity+"</li>"+
                                 "<li><span>Damage: </span>"+item.damage+"</li>"+
                                 "<li><span>Rate of fire: </span>"+item.rof+"</li>"+
                                 "<li><span>Bullet speed: </span>"+item.speed+"</li>"+
-                                "<li><span>Effective distance: </span>"+item.distance+"</li>"+
+                                "<li><span>Eff. distance: </span>"+item.distance+"</li>"+
                             "<ul>"+
+                            "<h1 class='keywords'>"+this.createKeywords(item)+"</h1>"+
                         "</div>";
-                item.tooltip = tooltip;
+
                 $('#inventory').append(tooltip).fadeIn("fast");
             break;
+        }
+    },
+
+    createKeywords: function(item) {
+        if (!item.modifier) {
+            return "<span class='"+item.rarity.toLowerCase()+"''>"+item.rarity+"</span>";
+        } else {
+            return "<span class='"+item.rarity.toLowerCase()+"''>"+item.rarity+"</span> <span class='modifier'>"+item.modifier+"</span>";
         }
     }
 };
