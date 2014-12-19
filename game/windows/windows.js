@@ -17,6 +17,41 @@ $(function() {
                 .mouseleave(function() {
                     $('.itemTooltip').remove();
                 });
+
+
+    $('.equipped-item').on('contextmenu', function(e) {
+        $('.contextTooltip').remove();
+        if($(e.target).data("item")) {
+            var menu = "<div class='contextTooltip'>"+
+                            "<ul>"+
+                                "<li id='unequip'>Unequip</li>"+
+                            "</ul>"+
+                        "</div>";
+            var addedMenu = $('#inventory').append(menu);
+            var offset = $(this).parent().parent().parent().offset();
+            $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
+            $('#unequip').click(function() {game.Inventory.unequip(e.target.id)});
+        }
+    });
+
+    $('.inventory-item').on('contextmenu', function(e){
+        $('.contextTooltip').remove();
+        if($(e.target).data("item")) {
+            var menu = "<div class='contextTooltip'>"+
+                            "<ul>"+
+                                "<li id='e-left'>Equip left</li>"+
+                                "<li id='e-right'>Equip right</li>"+
+                            "</ul>"+
+                        "</div>";
+            var addedMenu = $('#inventory').append(menu);
+            var offset = $(this).parent().parent().parent().offset();
+            $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
+            $('#e-left').click(function() {game.Inventory.equip($(e.target).data("item"), "left", $(e.target).index())});
+            $('#e-right').click(function() {game.Inventory.equip($(e.target).data("item"), "right", $(e.target).index())});
+        }
+    });
+
+    $('body').click(function(){$('.contextTooltip').remove();});
 });
 
 game.Windows = {

@@ -27,11 +27,8 @@ game.Player = me.Entity.extend({
         this.time = me.timer.getTime();     // Initialize timer that is used for shooting cooldown
 
         // Weapon info
-        this.currentWeapon = weapons.weapon1;
-
-        // Previous location info
-        this.prevLoc =  [];
-        this.prevNames = [];
+        this.weapons = [];
+        this.currentWeapon = undefined;
     },
 
     update: function(dt) {
@@ -74,14 +71,8 @@ game.Player = me.Entity.extend({
         }
 
         if (me.input.isKeyPressed('nextweapon')) {
-            var newWeapon = this.currentWeapon;
-            $.each(weapons, function(name, weapon) {
-                if (newWeapon !== weapon) {
-                    newWeapon = weapon;
-                    return false;
-                }
-            });
-            this.currentWeapon = newWeapon;
+            if (this.currentWeapon == this.weapons[0] && this.weapons[1]) this.currentWeapon = this.weapons[1];
+            else if (this.currentWeapon == this.weapons[1] && this.weapons[0]) this.currentWeapon = this.weapons[0];
             updateWeapon();
         }
 

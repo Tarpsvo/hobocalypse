@@ -352,7 +352,7 @@ body {
 	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
 	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
 
-	display: block;
+	display: none;
 }
 
 #inventory #inventory-title {
@@ -519,6 +519,32 @@ body {
 
 
 
+
+.contextTooltip {
+	border-radius: 3px;
+	background-color: #FFF;
+	border: 1px solid #CCC;
+
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+}
+
+.contextTooltip li {
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #FFF;
+	padding: 8px 12px 8px 12px;
+	border-radius: 3px;
+	color: #757575;
+}
+
+.contextTooltip li:hover {
+	cursor: pointer;
+	font-weight: 700;
+	background-color: #424242;
+	color: #DDD;
+}
 
 
 
