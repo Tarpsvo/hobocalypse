@@ -1,0 +1,519 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400|Open+Sans:600);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,500,400,700);
+
+body {
+	height: 100%;
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	background: #FFF url('../img/pixel_weave.png') repeat;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#main-center-wrap {
+	width: 960px;
+	margin: 0px auto;
+	position: relative;
+}
+
+
+
+
+
+/* TOP-GAMEBAR */
+#top-gamebar {
+	width: 960px;
+	height: 60px;
+	background: #36424a;
+	position: relative;
+
+	font-family: "Roboto", sans-serif;
+
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+}
+
+#top-gamebar-content {display: none;}
+
+#top-gamebar #profile-picture {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	background: url('../img/prof.png');
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#top-gamebar #experienceBox {
+	width: 300px;
+	height: 30px;
+	display: block;
+	background-color: #fbf08d;
+	line-height: 30px;
+
+	position: absolute;
+	top: 0;
+	left: 60px;
+	position: relative;
+}
+
+#top-gamebar #experienceBox #playerName {
+	position: absolute;
+	left: 15px;
+	display: inline-block;
+	color: #5a5a5a;
+	font-weight: 500;
+}
+
+#exp {
+	height: 30px;
+	width: 25%;
+	background-color: #f5846a;
+}
+
+#top-gamebar #experienceBox #playerLevel {
+	position: absolute;
+	display: inline-block;
+	right: 15px;
+
+	color: #5a5a5a;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+#top-gamebar #buttons-list li {float: left;}
+
+#top-gamebar #buttons-list {
+	margin-top: 30px;
+
+	position: absolute;
+	top: 0px;
+	left: 60px;
+}
+
+#top-gamebar #buttons-list li a {
+	display: inline-block;
+	list-style: none;
+
+	text-transform: uppercase;
+
+	font-weight: 400;
+	font-size: 10px;
+
+	color: #FFF;
+	line-height: 30px;
+	text-decoration: none;
+	padding: 0 15px 0 15px;
+}
+
+#top-gamebar #buttons-list li a:hover {background-color: rgba(255,255,255,0.15); cursor: pointer;}
+#top-gamebar #buttons-list li a:active {background-color: rgba(255,255,255,0.25); cursor: pointer;}
+/* TOP-GAMEBAR END */
+
+
+
+
+
+
+
+
+
+
+
+/* BOTTOM GAMEBAR */
+#bottom-gamebar {
+	width: 960px;
+	height: 60px;
+	background: #36424a;
+	position: relative;
+	bottom: 0;
+	display: none;
+
+	font-family: "Roboto", sans-serif;
+
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+}
+
+#bottom-gamebar #weapon-picture {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	background-color: #336E96;
+}
+
+#bottom-gamebar #weapon-picture span {
+	color: #FFF;
+	line-height: 60px;
+	font-size: 30px;
+}
+
+
+#bottom-gamebar #weapon-name {
+	width: 300px;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+
+	position: absolute;
+	top: 0;
+	left: 60px;
+}
+
+#bottom-gamebar #weapon-name span {
+	font-size: 18px;
+	line-height: 30px;
+	color: #FFF;
+	padding-left: 10px;
+}
+
+#bottom-gamebar #weapon-stats li {
+	float: left;
+	line-height: 30px;
+	color: #FAA453;
+	margin-left: 10px;
+	font-size: 14px;
+}
+
+#bottom-gamebar #weapon-stats li span {
+	color: #FFF;
+}
+
+#bottom-gamebar #weapon-stats {
+	margin-top: 30px;
+
+	position: absolute;
+	top: 0px;
+	left: 60px;
+}
+
+#bottom-gamebar #weapon-stats li {}
+
+
+/* INV */
+#bottom-gamebar #big-buttons {
+	float: right;
+	text-align: center;
+}
+
+#bottom-gamebar #big-buttons li {
+	list-style: none;
+	margin: 0px;
+	line-height: 60px;
+	width: 60px;
+	color: #FFF;
+	font-size: 20px;
+	background-color: #336E96;
+	display: inline-block;
+}
+
+#bottom-gamebar #big-buttons li:hover {
+	cursor: pointer;
+	background-color: #4b92c2;
+}
+/* BOTTOM GAMEBAR END */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESOURCE SHIT */
+#resourcebox {
+	margin-top: 20px;
+	margin-left: 20px;
+	background-color: #FFF;
+	font-family: "Roboto", sans-serif;
+	width: 200px;
+	z-index: 15;
+	position: relative;
+
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+}
+
+#resourcebox a span {
+	height: 30px;
+	width: 30px;
+	background: url('../img/min.png');
+	float: left;
+}
+
+#resourcebox a {
+	color: #FFF;
+	font-size: 14px;
+
+	text-decoration: none;
+
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	background-color: #5c94b8;
+}
+
+#resourcebox a:hover {background-color: #77a4d4; cursor: pointer;}
+#resourcebox a:active {background-color: #6092b2; cursor: pointer;}
+#resources-list {display: none;}
+
+#resources-list ul h4 {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	font-size: 9px;
+	font-weight: 500;
+	padding-left: 10px;
+}
+
+#resources-list ul li p {padding-left: 30px;}
+
+#resources-list ul li {
+	padding-right: 30px;
+	height: 25px;
+	line-height: 25px;
+
+	color: #FFF;
+	font-size: 11px;
+	font-weight: 500;
+}
+/* RESOURCE SHIT END */
+
+
+
+
+
+/* GAME PART */
+#game-content {
+	position: absolute;
+	z-index: 0;
+
+	height: 480px;
+	width: 100%;
+}
+
+#game-content {
+    position: relative;
+}
+
+#game-content div {
+    position: absolute;
+    z-index: 2;
+}
+/* GAME PART END */
+
+
+
+
+
+
+
+
+
+/* INVENTORY SCREEN PART */
+#inventory ul {
+	list-style: none;
+	text-align: center;
+}
+
+#inventory {
+	height: 420px;
+	width: 840px;
+	position: relative;
+	bottom: 30px;
+	right: 60px;
+
+	background-color: #37474F;
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+
+	display: none;
+}
+
+#inventory #inventory-title {
+	height: 35px;
+	width: 100%;
+	background-color: #03A9F4;
+	color: #FFF;
+	cursor: pointer;
+}
+
+#inventory #inventory-title a {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	line-height: 35px;
+	font-size: 16px;
+}
+
+#inventory #inventory-title a span {
+	margin-left: 20px;
+}
+
+
+
+
+#inventory #character-part {
+	width: 320px;
+	height: 385px;
+	left: 0;
+	top: 35px;
+	text-align: center;
+}
+
+#inventory #inventory-part {
+	width: 520px;
+	height: 385px;
+	right: 0;
+	top: 35px;
+}
+
+
+
+
+/* INVENTORY SLOTS */
+#inventory .inventory-item {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	margin: 10px;
+
+	background-color: #455A64;
+	border: 2px solid #CCC;
+	border-radius: 3px;
+
+	line-height: 60px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #FFF;
+	font-size: 20px;
+}
+
+#inventory #inventory-part .row-1 {
+	margin-top: 20px;
+}
+
+#inventory .inventory-item:hover {
+	background-color: #546E7A;
+	cursor: pointer;
+}
+
+
+
+
+
+
+/* CHARACTER PART */
+#inventory #character-part #char-row-1 {
+	margin-top: 40px;
+}
+
+#inventory #character-part li {
+	height: 70px;
+	width: 70px;
+	line-height: 70px;
+	margin: 10px;
+	display: inline-block;
+
+	border: 2px solid #CCC;
+	border-radius: 3px;
+	background-color: #455A64;
+
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #FFF;
+	font-size: 20px;
+}
+
+#inventory #character-part li:hover {
+	background-color: #546E7A;
+	cursor: pointer;
+}
+/* INVENTORY SCREEN PART END */
+
+
+
+/* TOOLTIPS */
+.itemTooltip {
+	position: absolute;
+
+	background-color: #607D8B;
+
+	padding: 0 0 5px 0;
+
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+}
+
+.itemTooltip li {
+	color: #FFF;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	text-align: left;
+	line-height: 20px;
+	padding: 0px 10px 0 10px;
+}
+
+.itemTooltip .item-title {
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	background-color: #FFA726;
+	color: #333;
+	padding: 0px 10px 0 10px;
+	margin-bottom: 5px;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ITEM STYLINGS */
+.unique {
+	color: #FFA726 !important;
+	border-color: #FFA726 !important;
+}
