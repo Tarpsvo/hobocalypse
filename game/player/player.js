@@ -27,7 +27,8 @@ game.Player = me.Entity.extend({
         this.time = me.timer.getTime();     // Initialize timer that is used for shooting cooldown
 
         // Weapon info
-        this.weapons = [];
+        this.primary = undefined;
+        this.secondary = undefined;
         this.currentWeapon = undefined;
     },
 
@@ -71,8 +72,8 @@ game.Player = me.Entity.extend({
         }
 
         if (me.input.isKeyPressed('nextweapon')) {
-            if (this.currentWeapon == this.weapons[0] && this.weapons[1]) this.currentWeapon = this.weapons[1];
-            else if (this.currentWeapon == this.weapons[1] && this.weapons[0]) this.currentWeapon = this.weapons[0];
+            if (this.currentWeapon == this.primary && this.secondary) {this.currentWeapon = this.secondary;}
+            else if (this.currentWeapon == this.secondary && this.primary) {this.currentWeapon = this.primary;}
             updateWeapon();
         }
 

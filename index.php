@@ -94,9 +94,9 @@
 							</ul>
 
 							<ul id="char-row-2">
-								<li id="weapon-1" class="equipped-item unique"></li>
+								<li id="primary" class="equipped-item"></li>
 								<li id="chestgear" class="equipped-item"></li>
-								<li id="weapon-2" class="equipped-item unique"></li>
+								<li id="secondary" class="equipped-item"></li>
 							</ul>
 
 							<ul id="char-row-3">

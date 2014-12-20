@@ -1,6 +1,7 @@
 var weapons = {
     "weapon1": {
-        "type":         "weapon",
+        "class":        "weapon",
+        "type":         "secondary",
         "name":         "H&K USP Compact",
         "logo":         "UC",
 
@@ -12,7 +13,8 @@ var weapons = {
         "rarity":       "Common"
         },
     "weapon2" : {
-        "type":         "weapon",
+        "class":        "weapon",
+        "type":         "primary",
         "name":         "Banhammer",
         "logo":         "OP",
 
@@ -25,7 +27,8 @@ var weapons = {
         "modifier":     "Admin-only"
         },
     "weapon3" : {
-        "type":         "weapon",
+        "class":        "weapon",
+        "type":         "secondary",
         "name":         "H&K USP Expert",
         "logo":         "UE",
 

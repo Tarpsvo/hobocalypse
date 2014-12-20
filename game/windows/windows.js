@@ -30,24 +30,26 @@ $(function() {
             var addedMenu = $('#inventory').append(menu);
             var offset = $(this).parent().parent().parent().offset();
             $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
-            $('#unequip').click(function() {game.Inventory.unequip(e.target.id)});
+            $('#unequip').click(function() {game.Inventory.unequip(e.target.id);});
         }
     });
 
     $('.inventory-item').on('contextmenu', function(e){
         $('.contextTooltip').remove();
         if($(e.target).data("item")) {
-            var menu = "<div class='contextTooltip'>"+
-                            "<ul>"+
-                                "<li id='e-left'>Equip left</li>"+
-                                "<li id='e-right'>Equip right</li>"+
-                            "</ul>"+
-                        "</div>";
-            var addedMenu = $('#inventory').append(menu);
-            var offset = $(this).parent().parent().parent().offset();
-            $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
-            $('#e-left').click(function() {game.Inventory.equip($(e.target).data("item"), "left", $(e.target).index())});
-            $('#e-right').click(function() {game.Inventory.equip($(e.target).data("item"), "right", $(e.target).index())});
+            if($(e.target).data("item").class == 'weapon') {
+                var menu = "<div class='contextTooltip'><ul>";
+
+                if ($(e.target).data("item").type == 'primary') menu += "<li id='e-primary'>Equip primary</li>";
+                else menu += "<li id='e-secondary'>Equip secondary</li>";
+                menu += "</ul></div>";
+
+                var addedMenu = $('#inventory').append(menu);
+                var offset = $(this).parent().parent().parent().offset();
+                $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
+                $('#e-primary').click(function() {game.Inventory.equip($(e.target).data("item"), "primary", $(e.target).index());});
+                $('#e-secondary').click(function() {game.Inventory.equip($(e.target).data("item"), "secondary", $(e.target).index());});
+            }
         }
     });
 
@@ -72,7 +74,7 @@ game.Windows = {
 
 
 
-        switch (item.type) {
+        switch (item.class) {
             case "weapon":
                 tooltip = "<div class='itemTooltip'>"+
                             "<h1 class='item-title "+item.rarity.toLowerCase()+"'>"+item.name+"</h1>"+

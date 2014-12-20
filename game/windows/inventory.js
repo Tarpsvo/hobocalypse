@@ -41,15 +41,14 @@ game.Inventory = {
             });
 
 
-            player.weapons[0] = game.Equips['weapon-1'];
-            player.weapons[1] = game.Equips['weapon-2'];
-            if (player.weapons[0]) {
-                player.currentWeapon = player.weapons[0];
-            } else if (player.weapons[1]) {
-                player.currentWeapon = player.weapons[1];
+            player.primary = game.Equips.primary;
+            player.secondary = game.Equips.secondary;
+            if (player.primary) {
+                player.currentWeapon = player.primary;
+            } else if (player.secondary) {
+                player.currentWeapon = player.secondary;
             } else {
-                player.weapons[0] = weapons.weapon1;
-                player.currentWeapon = player.weapons[0];
+                player.currentWeapon = weapons.weapon1;
                 alert("Unequipping both weapons safe-mode: defaulted to weapon1");
             }
             updateWeapon();
@@ -64,18 +63,18 @@ game.Inventory = {
     },
 
     equip: function(item, target, slot) {
-
-
-        switch (item.type) {
+        switch (item.class) {
             case "weapon":
-                if (target == "left") {
-                    if (game.Equips['weapon-1']) game.Backpack[slot] = game.Equips['weapon-1']; else game.Backpack.splice(slot, 1);
-                    game.Equips['weapon-1'] = item;
+                // If primary, equip to left slot, else to right slot
+                if (target == "primary") {
+                    // If we have a weapon in primary slot, switch items. Else add item to primary slot and remove from inventory. 
+                    if (game.Equips.primary) game.Backpack[slot] = game.Equips.primary; else game.Backpack.splice(slot, 1);
+                    game.Equips.primary = item;
 
                     game.Inventory.updateInventory();
                 } else {
-                    if (game.Equips['weapon-2']) game.Backpack[slot] = game.Equips['weapon-2']; else game.Backpack.splice(slot, 1);
-                    game.Equips['weapon-2'] = item;
+                    if (game.Equips.secondary) game.Backpack[slot] = game.Equips.secondary; else game.Backpack.splice(slot, 1);
+                    game.Equips.secondary = item;
 
                     game.Inventory.updateInventory();
                 }
@@ -90,11 +89,13 @@ game.Inventory = {
     }
 };
 
+
+/* DEFAULT ITEMS */
 game.Equips = {
     "headgear": null,
-    "weapon-1": weapons.weapon1,
+    "primary": weapons.weapon2,
     "chestgear": null,
-    "weapon-2": weapons.weapon2,
+    "secondary": weapons.weapon1,
     "left-acc": null,
     "pants": null,
     "right-acc": null
@@ -103,5 +104,4 @@ game.Equips = {
 game.Backpack = [
     weapons.weapon1,
     weapons.weapon3,
-    weapons.weapon2
 ];
