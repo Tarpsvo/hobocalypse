@@ -31,7 +31,7 @@ var game = {
     me.state.change(me.state.LOADING);
 
     // THIS IS HERE TO DISPLAY THE INVENTORY BEFORE ACTUALLY LOADING INTO THE GAME
-    //game.Inventory.updateInventory();
+    game.Inventory.updateInventory();
     $('#main-center-wrap').on('contextmenu', function(e){ return false; });
 },
 

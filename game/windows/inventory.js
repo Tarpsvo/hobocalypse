@@ -18,29 +18,34 @@ game.Inventory = {
 
         $.each(equips, function(index, item) {
             $("#"+index)
-                .removeData("item")
-                .removeClass("common uncommon unique");
+                .removeData("item") // Remove data attached to all slots
+                .removeClass(); // Remove all classes
             if (item) {
                 $("#"+index)
                     .text(item.logo)
-                    .data("item", item)
-                    .addClass(item.rarity.toLowerCase());
+                    .data("item", item) // Attach item info to slot
+                    .addClass("equipped-item", item.rarity.toLowerCase()) // Add classes
+                    .addClass(item.class);
 
             } else $("#"+index).text("-");
         });
 
         $('.inventory-item')
             .removeData("item")
-            .removeClass("common uncommon unique")
+            .removeClass()
             .text(function(index, currentContent) {
+                $(this).addClass("inventory-item");
                 if (items[index]) {
-                    $(this).data("item", items[index]);
-                    $(this).addClass(items[index].rarity.toLowerCase());
+                    $(this)
+                        .data("item", items[index])
+                        .addClass(items[index].rarity.toLowerCase())
+                        .addClass(items[index].class);
                     return  items[index].logo;
                 } else return "-";
             });
 
 
+            // When inventory is closed, set proper weapon
             player.primary = game.Equips.primary;
             player.secondary = game.Equips.secondary;
             if (player.primary) {
@@ -78,6 +83,13 @@ game.Inventory = {
 
                     game.Inventory.updateInventory();
                 }
+            break;
+
+            default:
+                if (game.Equips[item.class]) game.Backpack[slot] = game.Equips[item.class]; else game.Backpack.splice(slot, 1);
+                    game.Equips[item.class] = item;
+                    game.Inventory.updateInventory();
+            break;
         }
     },
 
@@ -94,7 +106,7 @@ game.Inventory = {
 game.Equips = {
     "headgear": null,
     "primary": weapons.weapon2,
-    "chestgear": null,
+    "chestgear": chestgear.chest1,
     "secondary": weapons.weapon1,
     "left-acc": null,
     "pants": null,
@@ -104,4 +116,6 @@ game.Equips = {
 game.Backpack = [
     weapons.weapon1,
     weapons.weapon3,
+    chestgear.chest2,
+    chestgear.chest3
 ];

@@ -5,6 +5,7 @@ var weapons = {
         "name":         "H&K USP Compact",
         "logo":         "UC",
 
+        "modifiers":    ["damage", "rof", "distance", "speed"],
         "damage":       25,
         "rof":          60,
         "distance":     250,
@@ -16,8 +17,9 @@ var weapons = {
         "class":        "weapon",
         "type":         "primary",
         "name":         "Banhammer",
-        "logo":         "OP",
+        "logo":         "BNH",
 
+        "modifiers":    ["damage", "rof", "distance", "speed"],
         "damage":       100,
         "rof":          200,
         "distance":     500,
@@ -32,6 +34,7 @@ var weapons = {
         "name":         "H&K USP Expert",
         "logo":         "UE",
 
+        "modifiers":    ["damage", "rof", "distance", "speed"],
         "damage":       30,
         "rof":          100,
         "distance":     300,

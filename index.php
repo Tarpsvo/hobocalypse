@@ -36,10 +36,15 @@
 		<script src="game/entities/PositionEntities.js"></script>
 		<script src="game/entities/fontbox.js"></script>
 
+		<!-- Game item system -->
+		<script src="game/items/weapons.js"></script>
+		<script src="game/items/chestgear.js"></script>
+		<script src="game/items/pants.js"></script>
+		<script src="game/items/headgear.js"></script>
+
 		<!-- Uncategorized -->
 		<script src="game/popups/popup.js"></script>
 		<script src="game/levelChange.js"></script>
-		<script src="game/items/weapons.js"></script>
 
 		<!-- Other important scripts -->
 		<script type="text/javascript" src="game/windows/windows.js"></script>

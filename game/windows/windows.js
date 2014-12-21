@@ -4,8 +4,9 @@ $(function() {
 
     $('.equipped-item, .inventory-item')
                 .mouseenter(function() {
-                    if ($(this).text() !== '-' || !$(this).text()) {
-                        game.Windows.createTooltip($(this).data("item"));
+                    if ($(this).data("item")) {
+                        var tooltip = game.Windows.createTooltip($(this).data("item"));
+                        $('#inventory').append(tooltip);
                     }
                 })
                 .bind('mousemove', function(e){
@@ -30,7 +31,10 @@ $(function() {
             var addedMenu = $('#inventory').append(menu);
             var offset = $(this).parent().parent().parent().offset();
             $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
-            $('#unequip').click(function() {game.Inventory.unequip(e.target.id);});
+            $('#unequip').click(function() {
+                var player = me.game.world.getChildByName('Player')[0];
+                if (!player.secondary || !player.primary) alert("You need at least one weapon.");
+                else game.Inventory.unequip(e.target.id);});
         }
     });
 
@@ -69,27 +73,21 @@ game.Windows = {
     },
 
     createTooltip: function(item) {
-        var tooltip;
-        var modifier = (!item.modifier) ? "<span>"+item.modifier+"</span>" : " ";
-
-
-
-        switch (item.class) {
-            case "weapon":
-                tooltip = "<div class='itemTooltip'>"+
+        if (item.modifiers) {
+            var tooltip;
+            tooltip = "<div class='itemTooltip'>"+
                             "<h1 class='item-title "+item.rarity.toLowerCase()+"'>"+item.name+"</h1>"+
-                            "<ul class='info-list'>"+
-                                "<li><span>Damage: </span>"+item.damage+"</li>"+
-                                "<li><span>Rate of fire: </span>"+item.rof+"</li>"+
-                                "<li><span>Bullet speed: </span>"+item.speed+"</li>"+
-                                "<li><span>Eff. distance: </span>"+item.distance+"</li>"+
-                            "<ul>"+
-                            "<h1 class='keywords'>"+this.createKeywords(item)+"</h1>"+
-                        "</div>";
+                            "<ul class='info-list'>";
 
-                $('#inventory').append(tooltip).fadeIn("fast");
-            break;
-        }
+
+            for (var i = 0; i < item.modifiers.length; i++) {
+                tooltip += "<li><span>"+item.modifiers[i]+": </span>"+item[item.modifiers[i].toLowerCase()]+"</li>";
+            }
+
+            tooltip += "</ul><h1 class='keywords'>"+this.createKeywords(item)+"</h1></div>";
+            return tooltip;
+
+        } else console.log("Incorrectly marked down item: no modifier array");
     },
 
     createKeywords: function(item) {
