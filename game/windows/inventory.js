@@ -24,7 +24,8 @@ game.Inventory = {
                 $("#"+index)
                     .text(item.logo)
                     .data("item", item) // Attach item info to slot
-                    .addClass("equipped-item", item.rarity.toLowerCase()) // Add classes
+                    .addClass(item.rarity.toLowerCase())
+                    .addClass("equipped-item") // Add classes
                     .addClass(item.class);
 
             } else $("#"+index).text("-");
@@ -104,12 +105,12 @@ game.Inventory = {
 
 /* DEFAULT ITEMS */
 game.Equips = {
-    "headgear": null,
+    "headgear": headgear.head1,
     "primary": weapons.weapon2,
     "chestgear": chestgear.chest1,
     "secondary": weapons.weapon1,
     "left-acc": null,
-    "pants": null,
+    "pants": pants.pants3,
     "right-acc": null
 };
 
@@ -117,5 +118,8 @@ game.Backpack = [
     weapons.weapon1,
     weapons.weapon3,
     chestgear.chest2,
-    chestgear.chest3
+    chestgear.chest3,
+    headgear.head2,
+    pants.pants1,
+    pants.pants2
 ];

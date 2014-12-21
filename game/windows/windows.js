@@ -32,27 +32,37 @@ $(function() {
             var offset = $(this).parent().parent().parent().offset();
             $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
             $('#unequip').click(function() {
-                var player = me.game.world.getChildByName('Player')[0];
-                if (!player.secondary || !player.primary) alert("You need at least one weapon.");
-                else game.Inventory.unequip(e.target.id);});
+                // If weapon, check if the player is not unequipping both, cause he needs at least one
+                if ($(e.target).data("item").class === 'weapon') {
+                    var player = me.game.world.getChildByName('Player')[0];
+                    if (!player.secondary || !player.primary) alert("You need at least one weapon.");
+                    else game.Inventory.unequip(e.target.id);
+                } else game.Inventory.unequip(e.target.id);});
         }
     });
 
     $('.inventory-item').on('contextmenu', function(e){
         $('.contextTooltip').remove();
         if($(e.target).data("item")) {
-            if($(e.target).data("item").class == 'weapon') {
-                var menu = "<div class='contextTooltip'><ul>";
-
+            var menu = "<div class='contextTooltip'><ul>";
+            var offset = $(this).parent().parent().parent().offset();
+            var addedMenu;
+            if($(e.target).data("item").class === 'weapon') {
                 if ($(e.target).data("item").type == 'primary') menu += "<li id='e-primary'>Equip primary</li>";
                 else menu += "<li id='e-secondary'>Equip secondary</li>";
                 menu += "</ul></div>";
 
-                var addedMenu = $('#inventory').append(menu);
-                var offset = $(this).parent().parent().parent().offset();
+                addedMenu = $('#inventory').append(menu);
                 $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
                 $('#e-primary').click(function() {game.Inventory.equip($(e.target).data("item"), "primary", $(e.target).index());});
                 $('#e-secondary').click(function() {game.Inventory.equip($(e.target).data("item"), "secondary", $(e.target).index());});
+            } else {
+                menu = "<div class='contextTooltip'><ul>";
+                menu += "<li id='e-equip'>Equip</li>";
+                menu += "</ul></div>";
+                addedMenu = $('#inventory').append(menu);
+                $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
+                $('#e-equip').click(function() {game.Inventory.equip($(e.target).data("item"), "primary", $(e.target).index());});
             }
         }
     });

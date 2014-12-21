@@ -607,7 +607,7 @@ background: radial-gradient(ellipse at center,  rgba(125,185,232,0) 0%,rgba(165,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#80ef5350',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-.chestgear {
+.chestgear, .pants, .headgear {
 background: -moz-radial-gradient(center, ellipse cover,  rgba(125,185,232,0) 0%, rgba(117,186,188,0) 35%, rgba(102,187,106,0.5) 100%); /* FF3.6+ */
 background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(125,185,232,0)), color-stop(35%,rgba(117,186,188,0)), color-stop(100%,rgba(102,187,106,0.5))); /* Chrome,Safari4+ */
 background: -webkit-radial-gradient(center, ellipse cover,  rgba(125,185,232,0) 0%,rgba(117,186,188,0) 35%,rgba(102,187,106,0.5) 100%); /* Chrome10+,Safari5.1+ */
@@ -619,5 +619,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', e
 
 
 #inventory {
-	display: block;
+	display: none;
 }

@@ -1,6 +1,6 @@
 var pants = {
-    "chest1": {
-        "class":        "chestgear",
+    "pants1": {
+        "class":        "pants",
         "type":         "secondary",
         "name":         "Jeans",
         "logo":         "JN",
@@ -11,8 +11,8 @@ var pants = {
 
         "rarity":       "Common"
         },
-    "chest2" : {
-        "class":        "chestgear",
+    "pants2" : {
+        "class":        "pants",
         "type":         "primary",
         "name":         "Estonian Army uniform pants",
         "logo":         "EP",
@@ -24,8 +24,8 @@ var pants = {
         "rarity":       "Unique",
         "modifier":     "Admin-only"
         },
-    "chest3" : {
-        "class":        "chestgear",
+    "pants3" : {
+        "class":        "pants",
         "type":         "secondary",
         "name":         "Knee protectors",
         "logo":         "KP",
