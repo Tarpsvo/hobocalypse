@@ -112,15 +112,14 @@
 						</div>
 
 						<div id="inventory-part">
+							<ul class="inv-list">
 							<?php
-								for ($i=1; $i < 5; $i++) {
-									echo "<ul class='row-".$i."'>";
-									for ($j=0; $j < 5; $j++) {
-										echo "<li class='inventory-item'></li>";
-									}
-									echo "</ul>";
+								for ($j=1; $j < 21; $j++) {
+									echo "<li class='inventory-item'></li>";
+									if ($j%5 == 0) echo "<br />";
 								}
 							?>
+							</ul>
 						</div>
 					</div>
 

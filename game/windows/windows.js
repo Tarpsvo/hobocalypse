@@ -54,15 +54,15 @@ $(function() {
 
                 addedMenu = $('#inventory').append(menu);
                 $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
-                $('#e-primary').click(function() {game.Inventory.equip($(e.target).data("item"), "primary", $(e.target).index());});
-                $('#e-secondary').click(function() {game.Inventory.equip($(e.target).data("item"), "secondary", $(e.target).index());});
+                $('#e-primary').click(function() {game.Inventory.equip($(e.target).data("item"), "primary", $('.inventory-item').index($(e.target)));});
+                $('#e-secondary').click(function() {game.Inventory.equip($(e.target).data("item"), "secondary", $('.inventory-item').index($(e.target)));});
             } else {
                 menu = "<div class='contextTooltip'><ul>";
                 menu += "<li id='e-equip'>Equip</li>";
                 menu += "</ul></div>";
                 addedMenu = $('#inventory').append(menu);
                 $('.contextTooltip').css({'top':e.pageY-offset.top+10,'left':e.pageX-offset.left+10});
-                $('#e-equip').click(function() {game.Inventory.equip($(e.target).data("item"), "primary", $(e.target).index());});
+                $('#e-equip').click(function() {game.Inventory.equip($(e.target).data("item"), "primary", $('.inventory-item').index($(e.target)));});
             }
         }
     });
