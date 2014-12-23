@@ -54,7 +54,6 @@ var game = {
         me.pool.register("LevelChange", game.LevelChange);
 
         // Other objects
-        me.pool.register("defaultPos", game.defaultPos);
         me.pool.register("spawn", game.playerSpawn);
 
         // enable the keyboard

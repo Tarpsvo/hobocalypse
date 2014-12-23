@@ -38,8 +38,7 @@
 
 		<!-- Game item system -->
 		<script src="game/items/weapons.js"></script>
-		<script src="game/items/chestgear.js"></script>
-		<script src="game/items/pants.js"></script>
+		<script src="game/items/armor.js"></script>
 		<script src="game/items/headgear.js"></script>
 
 		<!-- Uncategorized -->
@@ -93,28 +92,31 @@
 			<div id="game-content">
 				<div id="inventory">
 						<div id="inventory-title"><a><span>&#8672;</span> Inventory</a></div>
-						<div id="character-part" class="table">
-							<ul id="char-row-1">
+						<div id="character-part">
+							<ul class="char-column" id="acc-column">
+								<li id="acc1" class="equipped-item"></li>
+								<li id="acc2" class="equipped-item"></li>
+								<li id="acc3" class="equipped-item"></li>
+								<li id="acc4" class="equipped-item"></li>
+								<!-- TODO: Accessories, artifacts? -->
+							</ul>
+
+							<ul class="char-column" id="armor-column">
 								<li id="headgear" class="equipped-item"></li>
+								<li id="armor" class="equipped-item"></li>
+								<li id="tool" class="equipped-item"></li>
 							</ul>
 
-							<ul id="char-row-2">
+							<ul class="char-column" id="weapon-column">
 								<li id="primary" class="equipped-item"></li>
-								<li id="chestgear" class="equipped-item"></li>
 								<li id="secondary" class="equipped-item"></li>
-							</ul>
-
-							<ul id="char-row-3">
-								<li id="left-acc" class="equipped-item"></li>
-								<li id="pants" class="equipped-item"></li>
-								<li id="right-acc" class="equipped-item"></li>
 							</ul>
 						</div>
 
 						<div id="inventory-part">
 							<ul class="inv-list">
 							<?php
-								for ($j=1; $j < 21; $j++) {
+								for ($j=1; $j < 31; $j++) {
 									echo "<li class='inventory-item'></li>";
 									if ($j%5 == 0) echo "<br />";
 								}

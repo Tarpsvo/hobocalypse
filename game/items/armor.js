@@ -1,9 +1,10 @@
-var chestgear = {
-    "chest1": {
-        "class":        "chestgear",
+var armor = {
+    "armor1": {
+        "class":        "armor",
         "type":         "secondary",
         "name":         "T-Shirt",
         "logo":         "TS",
+        "icon":         "armor1",
 
         "modifiers":    ["armor", "weight"],
         "armor":        0,
@@ -11,11 +12,12 @@ var chestgear = {
 
         "rarity":       "Common"
         },
-    "chest2" : {
-        "class":        "chestgear",
+    "armor2" : {
+        "class":        "armor",
         "type":         "primary",
         "name":         "Estonian Army Tunic",
         "logo":         "EE",
+        "icon":         "armor1",
 
         "modifiers":    ["armor", "weight"],
         "armor":        25,
@@ -24,11 +26,12 @@ var chestgear = {
         "rarity":       "Unique",
         "modifier":     "Admin-only"
         },
-    "chest3" : {
-        "class":        "chestgear",
+    "armor3" : {
+        "class":        "armor",
         "type":         "secondary",
         "name":         "Bulletproof vest",
         "logo":         "BP",
+        "icon":         "armor1",
 
         "modifiers":    ["armor", "weight"],
         "armor":        0,

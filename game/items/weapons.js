@@ -4,6 +4,7 @@ var weapons = {
         "type":         "secondary",
         "name":         "H&K USP Compact",
         "logo":         "UC",
+        "icon":         "pistol1",
 
         "modifiers":    ["damage", "rof", "distance", "speed"],
         "damage":       25,
@@ -18,6 +19,7 @@ var weapons = {
         "type":         "primary",
         "name":         "Banhammer",
         "logo":         "BNH",
+        "icon":         "weapon1",
 
         "modifiers":    ["damage", "rof", "distance", "speed"],
         "damage":       100,
@@ -33,6 +35,7 @@ var weapons = {
         "type":         "secondary",
         "name":         "H&K USP Expert",
         "logo":         "UE",
+        "icon":         "pistol1",
 
         "modifiers":    ["damage", "rof", "distance", "speed"],
         "damage":       30,

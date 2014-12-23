@@ -5,3 +5,7 @@
 Live version is accessible at [Tramvai.im](http://tramvai.im/game/)
 
 Copyright &copy; Tramvai 2014
+
+## Resources used
+* Two character spritesheets generated with [Bannedstory](www.maplesimulator.com/programs/bannedstory)
+* Icons being implemented from [Zone of Alienation mod](http://www.moddb.com/mods/zone-of-alienation-mod/images/icons-as-of-oct-14th-2012)

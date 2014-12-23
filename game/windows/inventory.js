@@ -19,29 +19,45 @@ game.Inventory = {
         $.each(equips, function(index, item) {
             $("#"+index)
                 .removeData("item") // Remove data attached to all slots
-                .removeClass(); // Remove all classes
+                .removeClass() // Remove all classes
+                .css('background-image', ''); // Remove backgrounds
+
+            var slot = $("#"+index);
             if (item) {
-                $("#"+index)
-                    .text(item.logo)
+
+                slot
                     .data("item", item) // Attach item info to slot
                     .addClass(item.rarity.toLowerCase())
                     .addClass("equipped-item") // Add classes
-                    .addClass(item.class);
+                    .addClass(item.class)
+                    .text('');
 
-            } else $("#"+index).text("-");
+                if (slot.data("item").icon) {
+                    slot.css('background-image', 'url(' + me.loader.getImage(slot.data("item").icon).src + ')');
+                } else {
+                    slot.text(item.logo);
+                }
+
+            } else slot.text("-");
         });
 
         $('.inventory-item')
             .removeData("item")
             .removeClass()
+            .css('background-image', '')
             .text(function(index, currentContent) {
                 $(this).addClass("inventory-item");
                 if (items[index]) {
                     $(this)
                         .data("item", items[index])
                         .addClass(items[index].rarity.toLowerCase())
-                        .addClass(items[index].class);
-                    return  items[index].logo;
+                        .addClass(items[index].class)
+                        .text('');
+                        
+                    if ($(this).data("item").icon) {
+                        $(this).css('background-image', 'url(' + me.loader.getImage($(this).data("item").icon).src + ')');
+                    }
+                    else return  items[index].logo;
                 } else return "-";
             });
 
@@ -107,19 +123,19 @@ game.Inventory = {
 game.Equips = {
     "headgear": headgear.head1,
     "primary": weapons.weapon2,
-    "chestgear": chestgear.chest1,
+    "armor": armor.armor2,
     "secondary": weapons.weapon1,
-    "left-acc": null,
-    "pants": pants.pants3,
-    "right-acc": null
+    "tool": null,
+    "acc1": null,
+    "acc2": null,
+    "acc3": null,
+    "acc4": null
 };
 
 game.Backpack = [
     weapons.weapon1,
     weapons.weapon3,
-    chestgear.chest2,
-    chestgear.chest3,
+    armor.armor1,
+    armor.armor3,
     headgear.head2,
-    pants.pants1,
-    pants.pants2
 ];

@@ -74,11 +74,12 @@ game.Windows = {
     inventory: function() {
         if ($('#inventory').css('display') == 'none') {
             me.state.pause(true);
-            $('#inventory').stop().animate({height: "toggle", width: "toggle"}, 500);
+            if($('#inventory').css('display') !== 'none') {me.state.pause(true);}
+            $('#inventory').stop().animate({width: "toggle"}, 500);
             $(".levelPopup").remove();
         } else {
             me.state.resume(true);
-            $('#inventory').stop().animate({height: "toggle", width: "toggle"}, 500);
+            $('#inventory').stop().animate({width: "toggle"}, 500);
         }
     },
 

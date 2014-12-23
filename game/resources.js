@@ -29,6 +29,11 @@ game.resources = [
     {name: "area02", type: "tmx", src: "data/map/area02.tmx"},
     {name: "area03", type: "tmx", src: "data/map/area03.tmx"},
 
+    // Items
+    {name: "armor1",     type: "image",     src: "data/img/items/armor.png"},
+    {name: "weapon1",     type: "image",     src: "data/img/items/weapon.png"},
+    {name: "pistol1",     type: "image",     src: "data/img/items/pistol.png"},
+
     // Loading screens
     {name: "title",         type: "image",      src:"data/img/screens/loading.jpg"}
 ];
