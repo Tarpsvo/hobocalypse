@@ -39,7 +39,6 @@
 		<!-- Game item system -->
 		<script src="game/items/weapons.js"></script>
 		<script src="game/items/armor.js"></script>
-		<script src="game/items/headgear.js"></script>
 
 		<!-- Uncategorized -->
 		<script src="game/popups/popup.js"></script>

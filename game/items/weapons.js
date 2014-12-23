@@ -18,7 +18,7 @@ var weapons = {
         "class":        "weapon",
         "type":         "primary",
         "name":         "Heckler & Koch G3",
-        "logo":         "BNH",
+        "logo":         "G3",
         "icon":         "g3",
 
         "modifiers":    ["damage", "rof", "distance", "speed"],

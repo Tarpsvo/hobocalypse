@@ -72,6 +72,14 @@ var game = {
         me.input.bindKey(me.input.KEY.UP,        "jump", true);
 
 
+
+
+        // Open inventory on I press
+        me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
+            if (keyCode == me.input.KEY.I && me.state.isCurrent(me.state.PLAY)) game.Windows.inventory();
+        });
+
+
         // Start the game.
         me.state.change(me.state.MENU);
     }

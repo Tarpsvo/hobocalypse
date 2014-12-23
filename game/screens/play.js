@@ -7,6 +7,5 @@ game.PlayScreen = me.ScreenObject.extend({
             game.Inventory.updateInventory();
             updateUI();
             updateWeapon();
-            $('body').keydown(function(e) {if (e.which == 73) game.Windows.inventory();});
         }
 });

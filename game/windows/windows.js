@@ -71,13 +71,16 @@ $(function() {
 
 game.Windows = {
     inventory: function() {
-        if ($('#inventory').css('display') == 'none') {
+        console.log($('#inventory').css('overflow'));
+        if ($('#inventory').css('display') == 'none' || $('#inventory').css('overflow') === 'hidden') {
             me.state.pause(true);
+            me.sys.resumeOnFocus = false;
             if($('#inventory').css('display') !== 'none') {me.state.pause(true);}
             $('#inventory').stop().animate({width: "toggle"}, 500);
             $(".levelPopup").remove();
         } else {
             me.state.resume(true);
+            me.sys.resumeOnFocus = true;
             $('#inventory').stop().animate({width: "toggle"}, 500);
         }
     },
