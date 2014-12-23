@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/game.css" />
 		<link rel="stylesheet" type="text/css" href="css/screen.css" />
 		<script src="scripts/jquery-2.1.1.min.js"></script>
-		<script src="scripts/jquery-ui.js"></script>
+		<script src="scripts/jquery-ui.min.js"></script>
 		<script src="scripts/resourcebox.js"></script>
 
 		<!-- Game related -->
