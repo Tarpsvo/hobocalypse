@@ -38,7 +38,7 @@ game.Inventory = {
                     slot.text(item.logo);
                 }
 
-            } else slot.text("-");
+            }
         });
 
         $('.inventory-item')
@@ -53,12 +53,12 @@ game.Inventory = {
                         .addClass(items[index].rarity.toLowerCase())
                         .addClass(items[index].class)
                         .text('');
-                        
+
                     if ($(this).data("item").icon) {
                         $(this).css('background-image', 'url(' + me.loader.getImage($(this).data("item").icon).src + ')');
                     }
                     else return  items[index].logo;
-                } else return "-";
+                }
             });
 
 
@@ -121,9 +121,9 @@ game.Inventory = {
 
 /* DEFAULT ITEMS */
 game.Equips = {
-    "headgear": headgear.head1,
-    "primary": weapons.weapon2,
-    "armor": armor.armor2,
+    "top-tool": null,
+    "primary": null,
+    "armor": armor.armor1,
     "secondary": weapons.weapon1,
     "tool": null,
     "acc1": null,
@@ -133,9 +133,7 @@ game.Equips = {
 };
 
 game.Backpack = [
-    weapons.weapon1,
     weapons.weapon3,
-    armor.armor1,
-    armor.armor3,
-    headgear.head2,
+    armor.armor2,
+    weapons.weapon2
 ];

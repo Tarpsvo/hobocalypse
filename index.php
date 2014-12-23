@@ -102,7 +102,7 @@
 							</ul>
 
 							<ul class="char-column" id="armor-column">
-								<li id="headgear" class="equipped-item"></li>
+								<li id="top-tool" class="equipped-item"></li>
 								<li id="armor" class="equipped-item"></li>
 								<li id="tool" class="equipped-item"></li>
 							</ul>

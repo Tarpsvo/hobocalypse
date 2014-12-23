@@ -32,7 +32,8 @@ var game = {
 
     // THIS IS HERE TO DISPLAY THE INVENTORY BEFORE ACTUALLY LOADING INTO THE GAME
     //game.Inventory.updateInventory();
-    $('#main-center-wrap').on('contextmenu', function(e){ return false; });
+    $('#main-center-wrap').on('contextmenu', function(e){ return false; }); // Disable right click menus in the game area
+    $('body').click(function(){$('.contextTooltip').remove();}); // Remove inventory tooltips when clicked anywhere
 },
 
 // Run on game resources loaded

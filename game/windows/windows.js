@@ -19,7 +19,7 @@ $(function() {
                     $('.itemTooltip').remove();
                 });
 
-
+    // Unequip menu generation
     $('.equipped-item').on('contextmenu', function(e) {
         $('.contextTooltip').remove();
         if($(e.target).data("item")) {
@@ -41,6 +41,7 @@ $(function() {
         }
     });
 
+    // Equip menu generation
     $('.inventory-item').on('contextmenu', function(e){
         $('.contextTooltip').remove();
         if($(e.target).data("item")) {
@@ -66,8 +67,6 @@ $(function() {
             }
         }
     });
-
-    $('body').click(function(){$('.contextTooltip').remove();});
 });
 
 game.Windows = {

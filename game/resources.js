@@ -30,9 +30,19 @@ game.resources = [
     {name: "area03", type: "tmx", src: "data/map/area03.tmx"},
 
     // Items
+    // Default placeholders
     {name: "armor1",     type: "image",     src: "data/img/items/armor.png"},
     {name: "weapon1",     type: "image",     src: "data/img/items/weapon.png"},
     {name: "pistol1",     type: "image",     src: "data/img/items/pistol.png"},
+
+    // Real weapon icons
+    {name: "makarov",     type: "image",     src: "data/img/items/makarov.png"},
+    {name: "p220",     type: "image",     src: "data/img/items/p220.png"},
+    {name: "g3",     type: "image",     src: "data/img/items/g3.png"},
+
+    // Real armor icons
+    {name: "vest",     type: "image",     src: "data/img/items/vest.png"},
+    {name: "bulletproof1",     type: "image",     src: "data/img/items/bulletproof1.png"},
 
     // Loading screens
     {name: "title",         type: "image",      src:"data/img/screens/loading.jpg"}

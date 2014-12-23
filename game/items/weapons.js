@@ -2,47 +2,47 @@ var weapons = {
     "weapon1": {
         "class":        "weapon",
         "type":         "secondary",
-        "name":         "H&K USP Compact",
-        "logo":         "UC",
-        "icon":         "pistol1",
+        "name":         "Makarov Pistol",
+        "logo":         "PM",
+        "icon":         "makarov",
 
         "modifiers":    ["damage", "rof", "distance", "speed"],
-        "damage":       25,
+        "damage":       15,
         "rof":          60,
         "distance":     250,
         "speed":        7,
 
         "rarity":       "Common"
-        },
+    },
     "weapon2" : {
         "class":        "weapon",
         "type":         "primary",
-        "name":         "Banhammer",
+        "name":         "Heckler & Koch G3",
         "logo":         "BNH",
-        "icon":         "weapon1",
+        "icon":         "g3",
 
         "modifiers":    ["damage", "rof", "distance", "speed"],
-        "damage":       100,
+        "damage":       20,
         "rof":          200,
-        "distance":     500,
-        "speed":        10,
+        "distance":     300,
+        "speed":        9,
 
-        "rarity":       "Unique",
+        "rarity":       "Uncommon",
         "modifier":     "Admin-only"
-        },
+    },
     "weapon3" : {
         "class":        "weapon",
         "type":         "secondary",
-        "name":         "H&K USP Expert",
-        "logo":         "UE",
-        "icon":         "pistol1",
+        "name":         "SIG Sauer P220",
+        "logo":         "P2",
+        "icon":         "p220",
 
         "modifiers":    ["damage", "rof", "distance", "speed"],
-        "damage":       30,
-        "rof":          100,
-        "distance":     300,
+        "damage":       16,
+        "rof":          70,
+        "distance":     200,
         "speed":        8,
 
         "rarity":       "Uncommon"
-        }
+    }
     };

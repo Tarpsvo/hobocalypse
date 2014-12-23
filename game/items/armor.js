@@ -2,12 +2,12 @@ var armor = {
     "armor1": {
         "class":        "armor",
         "type":         "secondary",
-        "name":         "T-Shirt",
-        "logo":         "TS",
-        "icon":         "armor1",
+        "name":         "Scavenger's leather vest",
+        "logo":         "SV",
+        "icon":         "vest",
 
         "modifiers":    ["armor", "weight"],
-        "armor":        0,
+        "armor":        2,
         "weight":       0,
 
         "rarity":       "Common"
@@ -15,28 +15,14 @@ var armor = {
     "armor2" : {
         "class":        "armor",
         "type":         "primary",
-        "name":         "Estonian Army Tunic",
-        "logo":         "EE",
-        "icon":         "armor1",
+        "name":         "Protective suit MkI",
+        "logo":         "M1",
+        "icon":         "bulletproof1",
 
         "modifiers":    ["armor", "weight"],
-        "armor":        25,
-        "weight":       0,
+        "armor":        8,
+        "weight":       6,
 
-        "rarity":       "Unique",
-        "modifier":     "Admin-only"
-        },
-    "armor3" : {
-        "class":        "armor",
-        "type":         "secondary",
-        "name":         "Bulletproof vest",
-        "logo":         "BP",
-        "icon":         "armor1",
-
-        "modifiers":    ["armor", "weight"],
-        "armor":        0,
-        "weight":       0,
-
-        "rarity":       "Uncommon"
+        "rarity":       "Uncommon",
         }
     };
