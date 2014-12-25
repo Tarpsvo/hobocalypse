@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="map" tilewidth="32" tileheight="32">
+  <image source="../img/map/map.png" width="960" height="480"/>
+ </tileset>
+ <layer name="background" width="30" height="15">
+  <data encoding="base64">
+   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
+  </data>
+ </layer>
+ <objectgroup name="collision"/>
+ <objectgroup name="map entities">
+  <object name="area" type="area" x="715.25" y="346.5" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 4D"/>
+    <property name="id" value="4d"/>
+    <property name="next" value="5b"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="511.25" y="199" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 4B"/>
+    <property name="id" value="4b"/>
+    <property name="next" value="5a"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="735.25" y="256" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 5B"/>
+    <property name="id" value="5b"/>
+    <property name="next" value="6b"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="665.75" y="40.1667" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 6A"/>
+    <property name="id" value="6a"/>
+    <property name="next" value="7"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="629.75" y="322" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 4C"/>
+    <property name="id" value="4c"/>
+    <property name="next" value="5b"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="391.75" y="360.5" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 2"/>
+    <property name="id" value="2"/>
+    <property name="next" value="3a,3b,3c"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="485.25" y="262.5" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 3B"/>
+    <property name="id" value="3b"/>
+    <property name="next" value="4b"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="745.25" y="146.5" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 6B"/>
+    <property name="id" value="6b"/>
+    <property name="next" value="7"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="401.25" y="85" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 4A"/>
+    <property name="id" value="4a"/>
+    <property name="next" value="5a"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="277.5" y="375.5" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 1"/>
+    <property name="id" value="1"/>
+    <property name="next" value="2"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="382.75" y="216.5" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 3A"/>
+    <property name="id" value="3a"/>
+    <property name="next" value="4a"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="555.75" y="407" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 3C"/>
+    <property name="id" value="3c"/>
+    <property name="next" value="4c,4d"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="578.75" y="52" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 5A"/>
+    <property name="id" value="5a"/>
+    <property name="next" value="6a"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="740.417" y="28.8333" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="City 7"/>
+    <property name="id" value="7"/>
+    <property name="next" value="end"/>
+   </properties>
+  </object>
+  <object name="area" type="area" x="844.083" y="15.8333" width="38.5" height="39">
+   <properties>
+    <property name="areaname" value="End city"/>
+    <property name="id" value="end"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -2,7 +2,8 @@ var game = {
     data: {
     exp: 0,
     level: 1,
-    nextLevel: 100
+    nextLevel: 100,
+    currentMap:  1
 },
 
 // Runs on page load
@@ -38,7 +39,8 @@ var game = {
 
 // Run on game resources loaded
     "loaded" : function () {
-        me.state.set(me.state.MENU, new game.TitleScreen());
+        me.state.set(me.state.LOADING, new game.TitleScreen());
+        me.state.set(me.state.MENU, new game.MapScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
 
         me.state.transition("fade", "#000000", 750);
@@ -56,6 +58,9 @@ var game = {
 
         // Other objects
         me.pool.register("spawn", game.playerSpawn);
+
+        // World map
+        me.pool.register("area", game.MapPoint);
 
         // enable the keyboard
         me.input.bindKey(me.input.KEY.A,        "left");
@@ -81,6 +86,6 @@ var game = {
 
 
         // Start the game.
-        me.state.change(me.state.MENU);
+        me.state.change(me.state.LOADING);
     }
 };

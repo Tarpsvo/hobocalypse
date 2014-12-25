@@ -18,22 +18,27 @@ game.resources = [
     {name: "zombie1_attack",    type: "image",     src: "data/img/sprite/zombie1_attack.png"},
 
     // Effects
-    {name: "bulletImage",            type: "image",     src: "data/img/sprite/bullet.png"},
+    {name: "bulletImage",   type: "image",     src: "data/img/sprite/bullet.png"},
 
     // Parallax background
-    {name: "skyline1",        type:"image",      src: "data/img/map/skyline1.png"},
-    {name: "clouds",         type:"image",      src: "data/img/clouds.png"},
+    {name: "skyline1",      type:"image",      src: "data/img/map/skyline1.png"},
 
     // Map stuff
-    {name: "area01", type: "tmx", src: "data/map/area01.tmx"},
-    {name: "area02", type: "tmx", src: "data/map/area02.tmx"},
-    {name: "area03", type: "tmx", src: "data/map/area03.tmx"},
+    {name: "worldmap",      type: "tmx",    src: "data/map/map.tmx"},
+    {name: "map",           type: "image",  src: "data/img/map/map.png"},
+    {name: "waypoints",     type: "image",  src: "data/img/map/waypoints.png"},
+
+
+
+    {name: "area01",        type: "tmx",    src: "data/map/area01.tmx"},
+    {name: "area02",        type: "tmx",    src: "data/map/area02.tmx"},
+    {name: "area03",        type: "tmx",    src: "data/map/area03.tmx"},
 
     // Items
     // Default placeholders
-    {name: "armor1",     type: "image",     src: "data/img/items/armor.png"},
-    {name: "weapon1",     type: "image",     src: "data/img/items/weapon.png"},
-    {name: "pistol1",     type: "image",     src: "data/img/items/pistol.png"},
+    {name: "armor1",        type: "image",     src: "data/img/items/armor.png"},
+    {name: "weapon1",       type: "image",     src: "data/img/items/weapon.png"},
+    {name: "pistol1",       type: "image",     src: "data/img/items/pistol.png"},
 
     // Real weapon icons
     {name: "makarov",     type: "image",     src: "data/img/items/makarov.png"},

@@ -25,6 +25,7 @@
 		<!-- Game screens -->
 		<script src="game/screens/play.js"></script>
 		<script src="game/screens/title.js"></script>
+		<script src="game/screens/map.js"></script>
 
 		<!-- Player -->
 		<script src="game/player/player.js"></script>
