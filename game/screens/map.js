@@ -1,6 +1,11 @@
 game.MapScreen = me.ScreenObject.extend({
     onResetEvent: function() {
         me.levelDirector.loadLevel("worldmap");
+
+        $('#bottom-gamebar').slideUp(500);
+        $('.levelPopup').remove();
+        $('.tutorialTooltip').remove();
+
         me.input.registerPointerEvent('pointermove', me.game.world, this.antiHover.bind(this));
     },
 
@@ -12,7 +17,12 @@ game.MapScreen = me.ScreenObject.extend({
     },
 
     onDestroyEvent: function() {
-        // On close
+        me.input.releasePointerEvent('pointermove', me.game.world);
+        for (var i = me.game.world.getChildByName("area").length - 1; i >= 0; i--) {
+            me.input.releasePointerEvent('pointermove', me.game.world.getChildByName("area")[i]);
+            me.input.releasePointerEvent('pointerdown', me.game.world.getChildByName("area")[i]);
+            me.game.world.removeChild(me.game.world.getChildByName("area")[i]);
+        }
     }
 });
 
@@ -24,6 +34,15 @@ game.MapPoint = me.Entity.extend({
 
         this._super(me.Entity, 'init', [x, y, settings]);
         this.s = settings;
+        this.renderable.addAnimation("current",  [2]);
+        this.renderable.addAnimation("next",  [0]);
+        this.renderable.addAnimation("far",  [1]);
+
+
+        var next = ((""+game.data.currentMap.next).indexOf(",") > -1) ? game.data.currentMap.next.split(',') : game.data.currentMap.next;
+        if(this.s.id === game.data.currentMap.id) this.renderable.setCurrentAnimation("current");
+        else if (next == this.s.id || $.inArray(this.s.id, next) > -1) this.renderable.setCurrentAnimation("next");
+        else this.renderable.setCurrentAnimation("far");
 
         me.input.registerPointerEvent('pointermove', this, this.onHover.bind(this));
         me.input.registerPointerEvent('pointerdown', this, this.clicked.bind(this));
@@ -52,8 +71,9 @@ game.MapPoint = me.Entity.extend({
         return tooltip;
     },
 
+    // Returns: CURRENT or NEXT
     checkStatus: function (hoverArea) {
-        var current = $.grep(me.game.world.getChildByName("area"), function(e) {return e.s.id === game.data.currentMap;})[0].s;
+        var current = $.grep(me.game.world.getChildByName("area"), function(e) {return e.s.id === game.data.currentMap.id;})[0].s;
         var next = ((""+current.next).indexOf(",") > -1) ? current.next.split(',') : current.next;
 
         if(hoverArea.s.id === current.id) return 'current';
@@ -64,7 +84,9 @@ game.MapPoint = me.Entity.extend({
         if (this.checkStatus(this) === 'current') alert("You're already here.");
         else if (this.checkStatus(this) === 'next') {
             if (confirm('Are you sure you want to travel to '+this.s.name+'?')) {
-                me.state.change(me.state.PLAY);
+                game.data.currentMap.id = this.s.id;
+                game.data.currentMap.next = this.s.next;
+                me.state.change(me.state.PLAY, "area01");
             } else {
                 // Do nothing!
             }

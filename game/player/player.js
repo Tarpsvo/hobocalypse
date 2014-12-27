@@ -25,6 +25,7 @@ game.Player = me.Entity.extend({
         // Helpful variables to make stuff function
         this.dLeft = true;                  // If the player is facing left
         this.time = me.timer.getTime();     // Initialize timer that is used for shooting cooldown
+        this.changingLevels = false;        // Stops level change spamming
 
         // Weapon info
         this.primary = undefined;
@@ -106,9 +107,13 @@ game.Player = me.Entity.extend({
                     if (!this.changingLevels && me.input.isKeyPressed('action')) {
                         this.changingLevels = true;
 
-                        var target = this.locationDetails(response.b);
-                        levelSpot = me.pool.pull("LevelChange", response.b.pos.x, response.b.pos.y, target.target, target.targetPos);
-                        levelSpot.goTo();
+                        if (response.b.name === 'end') {
+                            me.state.change(me.state.MENU);
+                        } else {
+                            var target = this.locationDetails(response.b);
+                            levelSpot = me.pool.pull("LevelChange", response.b.pos.x, response.b.pos.y, target.target, target.targetPos);
+                            levelSpot.goTo();
+                        }
                     }
 
                     return false;
@@ -145,9 +150,9 @@ game.Player = me.Entity.extend({
         if (!this.popup) {
             switch(type) {
                 case "travel":
+                    var text = (entity.name === 'end') ? 'Leave map' : "Move to "+entity.name.split("_")[1];
                     pos = me.game.viewport.worldToLocal(entity.pos.x+entity.width/2, entity.pos.y);
-                    this.popup = me.pool.pull("popup", pos.x, pos.y, "Move to "+entity.name.split("_")[1], "travel");
-                    me.game.world.addChild(this.popup);
+                    this.popup = me.pool.pull("popup", pos.x, pos.y, text, "travel");
                 break;
 
                 case "house":

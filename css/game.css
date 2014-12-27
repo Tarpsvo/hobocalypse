@@ -21,6 +21,7 @@ body {
 	width: 960px;
 	margin: 0px auto;
 	position: relative;
+	overflow: hidden;
 }
 
 
@@ -630,17 +631,18 @@ body {
     margin-bottom: 7px;
 }
 
-.mapTooltip h2 {
+.mapTooltip p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 12px;
     color: #444;
 }
 
-.mapTooltip h2 span {
+.mapTooltip p span {
     color: #1da6cf;
     font-weight: 600;
 }
+
 
 
 

@@ -10,6 +10,9 @@
 		<script src="scripts/jquery-ui.min.js"></script>
 		<script src="scripts/resourcebox.js"></script>
 
+		<!-- CSS files -->
+		<link rel="stylesheet" type="text/css" href="css/tutorial.css" />
+
 		<!-- Game related -->
 		<!-- melonJS Library -->
 		<script src="game/lib/melonJS-2.0.2.js"></script>
@@ -26,6 +29,7 @@
 		<script src="game/screens/play.js"></script>
 		<script src="game/screens/title.js"></script>
 		<script src="game/screens/map.js"></script>
+		<script src="game/screens/tutorial.js"></script>
 
 		<!-- Player -->
 		<script src="game/player/player.js"></script>
@@ -91,39 +95,39 @@
 
 			<div id="game-content">
 				<div id="inventory">
-						<div id="inventory-title"><a><span>&#8672;</span> Inventory</a></div>
-						<div id="character-part">
-							<ul class="char-column" id="acc-column">
-								<li id="acc1" class="equipped-item"></li>
-								<li id="acc2" class="equipped-item"></li>
-								<li id="acc3" class="equipped-item"></li>
-								<li id="acc4" class="equipped-item"></li>
-								<!-- TODO: Accessories, artifacts? -->
-							</ul>
+					<div id="inventory-title"><a><span>&#8672;</span> Inventory</a></div>
+					<div id="character-part">
+						<ul class="char-column" id="acc-column">
+							<li id="acc1" class="equipped-item"></li>
+							<li id="acc2" class="equipped-item"></li>
+							<li id="acc3" class="equipped-item"></li>
+							<li id="acc4" class="equipped-item"></li>
+							<!-- TODO: Accessories, artifacts? -->
+						</ul>
 
-							<ul class="char-column" id="armor-column">
-								<li id="top-tool" class="equipped-item"></li>
-								<li id="armor" class="equipped-item"></li>
-								<li id="tool" class="equipped-item"></li>
-							</ul>
+						<ul class="char-column" id="armor-column">
+							<li id="top-tool" class="equipped-item"></li>
+							<li id="armor" class="equipped-item"></li>
+							<li id="tool" class="equipped-item"></li>
+						</ul>
 
-							<ul class="char-column" id="weapon-column">
-								<li id="primary" class="equipped-item"></li>
-								<li id="secondary" class="equipped-item"></li>
-							</ul>
-						</div>
-
-						<div id="inventory-part">
-							<ul class="inv-list">
-							<?php
-								for ($j=1; $j < 31; $j++) {
-									echo "<li class='inventory-item'></li>";
-									if ($j%5 == 0) echo "<br />";
-								}
-							?>
-							</ul>
-						</div>
+						<ul class="char-column" id="weapon-column">
+							<li id="primary" class="equipped-item"></li>
+							<li id="secondary" class="equipped-item"></li>
+						</ul>
 					</div>
+
+					<div id="inventory-part">
+						<ul class="inv-list">
+						<?php
+							for ($j=1; $j < 31; $j++) {
+								echo "<li class='inventory-item'></li>";
+								if ($j%5 == 0) echo "<br />";
+							}
+						?>
+						</ul>
+					</div>
+				</div>
 
 				<script type="text/javascript">
 					window.onReady(function onReady() {

@@ -3,7 +3,7 @@ var game = {
     exp: 0,
     level: 1,
     nextLevel: 100,
-    currentMap:  1
+    currentMap: {id: 1, next: 2}
 },
 
 // Runs on page load
@@ -39,9 +39,12 @@ var game = {
 
 // Run on game resources loaded
     "loaded" : function () {
-        me.state.set(me.state.LOADING, new game.TitleScreen());
-        me.state.set(me.state.MENU, new game.MapScreen());
-        me.state.set(me.state.PLAY, new game.PlayScreen());
+        me.state.set(me.state.LOADING,  new game.TitleScreen());
+
+        me.state.set(me.state.PLAY+1,   new game.TutorialScreen());
+
+        me.state.set(me.state.MENU,     new game.MapScreen());
+        me.state.set(me.state.PLAY,     new game.PlayScreen());
 
         me.state.transition("fade", "#000000", 750);
 
@@ -81,7 +84,7 @@ var game = {
 
         // Open inventory on I press
         me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
-            if (keyCode == me.input.KEY.I && me.state.isCurrent(me.state.PLAY)) game.Windows.inventory();
+            if (keyCode == me.input.KEY.I && (me.state.isCurrent(me.state.PLAY) || me.state.isCurrent(me.state.PLAY+1))) game.Windows.inventory();
         });
 
 

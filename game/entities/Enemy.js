@@ -3,6 +3,7 @@
 game.EnemyEntity = me.Entity.extend({
     init: function(x, y, settings) {
         settings = {};
+        settings.name = "Enemy";
         settings.image = "zombie1";
         settings.spritewidth = settings.width = 54;
         settings.spriteheight = settings.height = 72;

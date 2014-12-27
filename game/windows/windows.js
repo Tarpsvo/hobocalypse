@@ -71,8 +71,8 @@ $(function() {
 
 game.Windows = {
     inventory: function() {
-        console.log($('#inventory').css('overflow'));
-        if ($('#inventory').css('display') == 'none' || $('#inventory').css('overflow') === 'hidden') {
+        this.hidden = (!this.hidden) ? true : false;
+        if ($('#inventory').css('display') == 'none' || this.hidden) {
             me.state.pause(true);
             me.sys.resumeOnFocus = false;
             if($('#inventory').css('display') !== 'none') {me.state.pause(true);}
